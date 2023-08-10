@@ -1,4 +1,3 @@
-
 package com.johnson.app.rest.Models;
 
 import java.math.BigDecimal;
@@ -11,7 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class User {
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -138,4 +137,3 @@ public class User {
         this.updatedAt = updatedAt;
     }
 }
-
