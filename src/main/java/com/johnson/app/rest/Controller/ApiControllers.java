@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.johnson.app.rest.Models.Category;
 import com.johnson.app.rest.Models.User;
 import com.johnson.app.rest.Repo.CategoryRepo;
 import com.johnson.app.rest.Repo.UserRepo;
@@ -72,9 +71,9 @@ public class ApiControllers {
                 return "User not found with id: " + id;
             }
         }
-    @PostMapping(value = "/saveCategory")
-    public String saveCategory(@RequestBody Category category) {
-        categoryRepo.save(category);
-        return "Saved..!";
-    }
+    // @PostMapping(value = "/saveCategory")
+    // public String saveCategory(@RequestBody Category category) {
+    //     categoryRepo.save(category);
+    //     return "Saved..!";
+    // }
 }
