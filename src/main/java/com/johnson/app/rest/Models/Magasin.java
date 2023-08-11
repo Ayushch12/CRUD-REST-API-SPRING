@@ -13,9 +13,6 @@ import jakarta.persistence.Id;
 public class Magasin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long materialId;
-
-    @Column
     private long magasinId;
 
     @Column
@@ -26,14 +23,6 @@ public class Magasin {
 
     @Column
     private Integer directeurPersonnelId;
-
-    public long getMaterialId() {
-        return materialId;
-    }
-
-    public void setMaterialId(long materialId) {
-        this.materialId = materialId;
-    }
 
     public long getMagasinId() {
         return magasinId;
