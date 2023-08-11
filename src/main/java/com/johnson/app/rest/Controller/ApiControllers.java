@@ -1,53 +1,5 @@
-// package com.johnson.app.rest.Controller;
 
-// import java.util.List;
-
-// import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.web.bind.annotation.GetMapping;
-// import org.springframework.web.bind.annotation.PostMapping;
-// import org.springframework.web.bind.annotation.RequestBody;
-// import org.springframework.web.bind.annotation.RestController;
-
-// import com.johnson.app.rest.Models.Category;
-// import com.johnson.app.rest.Models.User;
-// import com.johnson.app.rest.Repo.CategoryRepo;
-// import com.johnson.app.rest.Repo.UserRepo;
-
-// @RestController
-// public class ApiControllers {
-
-//     @Autowired
-//     private UserRepo userRepo;
-
-//      @Autowired
-//     private CategoryRepo categoryRepo;
-
-//     @GetMapping(value = "/")
-//     public String getPage() {
-//         return "Welcome";
-//     }
-
-//     @GetMapping(value = "/users")
-//     public List<User> getUsers() {
-//         return userRepo.findAll();
-
-//     }
-
-//     @PostMapping(value = "/save")
-//     public String saveUser(@RequestBody User user) {
-//         userRepo.save(user);
-//         return ("Saved..!");
-//     }
-
-//     @PostMapping(value = "/saveCategory")
-//     public String saveUser(@RequestBody Category category) {
-//         categoryRepo .save(category);
-//         return ("Saved..!");
-//     }
-
-// }
-
-package com.johnson.app.rest.Controller; // Corrected package name
+package com.johnson.app.rest.Controller;
 
 import java.util.List;
 
@@ -74,6 +26,8 @@ public class ApiControllers {
     @Autowired
     private CategoryRepo categoryRepo;
 
+     //Système CRUD
+
     @GetMapping(value = "/")
     public String getPage() {
         return "Welcome";
@@ -84,12 +38,14 @@ public class ApiControllers {
         return userRepo.findAll();
     }
 
+     // Lire CRUD
     @PostMapping(value = "/save")
     public String saveUser(@RequestBody User user) {
         userRepo.save(user);
         return "Saved..!";
     }
 
+    // Mis à jour CRUD
     @PutMapping(value = "/update/{id}")
     public String updateUser(@PathVariable long id, @RequestBody User user) {
             User updatedUser = userRepo.findById(id).get();
@@ -104,9 +60,8 @@ public class ApiControllers {
             updatedUser.setUpdatedAt(user.getUpdatedAt());
             userRepo.save(updatedUser);
             return "Updated..!";
-
         }
-        @DeleteMapping(value = "/delete/{id}") // Corrected mapping value
+        @DeleteMapping(value = "/delete/{id}") // Supprimer CRUD
         public String deleteUser(@PathVariable long id) {
             User deleteUser = userRepo.findById(id).orElse(null);
 
@@ -117,10 +72,6 @@ public class ApiControllers {
                 return "User not found with id: " + id;
             }
         }
-
-
-
-
     @PostMapping(value = "/saveCategory")
     public String saveCategory(@RequestBody Category category) {
         categoryRepo.save(category);
