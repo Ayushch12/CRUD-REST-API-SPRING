@@ -1,4 +1,4 @@
-# REST API JAVA SPRING BOOT
+# API REST JAVA SPRING BOOT
 
 Api Rest puis de les tester
 avec un HTTP Client (Postman).
