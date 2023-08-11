@@ -71,9 +71,5 @@ public class ApiControllers {
                 return "User not found with id: " + id;
             }
         }
-    // @PostMapping(value = "/saveCategory")
-    // public String saveCategory(@RequestBody Category category) {
-    //     categoryRepo.save(category);
-    //     return "Saved..!";
-    // }
+
 }
