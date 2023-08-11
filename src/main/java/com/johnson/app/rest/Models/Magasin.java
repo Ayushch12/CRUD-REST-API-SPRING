@@ -10,41 +10,36 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Inventary {
+public class Magasin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer  inventaireId;
+    private long materialId;
 
     @Column
-    private Integer  materialId;
-
-    @Column
-    private Integer  magasinId;
+    private long magasinId;
 
     @Column
     private Timestamp updatedAt;
 
-    public Integer getInventaireId() {
-        return inventaireId;
-    }
+    @Column
+    private String ville;
 
-    public void setInventaireId(Integer inventaireId) {
-        this.inventaireId = inventaireId;
-    }
+    @Column
+    private Integer directeurPersonnelId;
 
-    public Integer getMaterialId() {
+    public long getMaterialId() {
         return materialId;
     }
 
-    public void setMaterialId(Integer materialId) {
+    public void setMaterialId(long materialId) {
         this.materialId = materialId;
     }
 
-    public Integer getMagasinId() {
+    public long getMagasinId() {
         return magasinId;
     }
 
-    public void setMagasinId(Integer magasinId) {
+    public void setMagasinId(long magasinId) {
         this.magasinId = magasinId;
     }
 
@@ -56,6 +51,21 @@ public class Inventary {
         this.updatedAt = updatedAt;
     }
 
+    public String getVille() {
+        return ville;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
+    }
+
+    public Integer getDirecteurPersonnelId() {
+        return directeurPersonnelId;
+    }
+
+    public void setDirecteurPersonnelId(Integer directeurPersonnelId) {
+        this.directeurPersonnelId = directeurPersonnelId;
+    }
 
 
 }
